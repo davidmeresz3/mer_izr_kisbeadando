@@ -21,14 +21,14 @@ set(ament_dependencies
   geometry_msgs
 )
 
-# add_executable(simple_sub_node src/print_pose.cpp)
-# ament_target_dependencies(simple_sub_node ${ament_dependencies} )
+add_executable(velocity_publisher src/velocity_publisher.cpp)
+ament_target_dependencies(velocity_publisher ${ament_dependencies} )
 
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
 
 install(TARGETS
-# simple_sub_node
-DESTINATION lib/${PROJECT_NAME})
+  velocity_publisher
+  DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
